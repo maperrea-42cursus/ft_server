@@ -22,7 +22,6 @@ RUN nginx -t
 RUN apt install -y mariadb-server mariadb-client
 
 RUN apt install -y php php7.3-fpm php7.3-mysql php-json php-mbstring php-xml
-COPY --chown=www-data:www-data srcs/test.php /usr/share/nginx/html/test.php
 
 RUN wget https://www.phpmyadmin.net/downloads/phpMyAdmin-latest-english.tar.gz
 RUN mkdir /usr/share/nginx/html/phpmyadmin
