@@ -27,8 +27,7 @@ RUN wget https://www.phpmyadmin.net/downloads/phpMyAdmin-latest-english.tar.gz
 RUN mkdir /usr/share/nginx/html/phpmyadmin
 RUN tar -xf phpMyAdmin-latest-english.tar.gz --strip-components=1 -C /usr/share/nginx/html/phpmyadmin
 
-RUN wget https://wordpress.org/latest.tar.gz
-RUN tar -xf /latest.tar.gz -C usr/share/nginx/html
+ADD srcs/wordpress.tar.gz usr/share/nginx/html
 COPY --chown=www-data:www-data srcs/wp-config.php usr/share/nginx/html/wordpress/wp-config.php
 ADD srcs/wordpress.sql /wordpress.sql
 
